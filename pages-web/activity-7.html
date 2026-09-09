@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Activit&eacute; 7 &mdash; Calculer une m&eacute;trique de routage" name="description"/>
+  <title>
+   Activit&eacute; 7 &mdash; Calculer une m&eacute;trique de routage &mdash; AC2026
+  </title>
+  <link href="../css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Navigation principale" class="nav">
+    <a class="brand" href="../index.html">
+     Comprendre Internet
+    </a>
+    <div class="navlinks">
+     <a href="../index.html">
+      Accueil
+     </a>
+     <a href="activity-1.html">
+      Activit&eacute; 1
+     </a>
+     <a href="activity-2.html">
+      Activit&eacute; 2
+     </a>
+     <a href="activity-3.html">
+      Activit&eacute; 3
+     </a>
+     <a href="activity-4.html">
+      Activit&eacute; 4
+     </a>
+     <a href="activity-5.html">
+      Activit&eacute; 5
+     </a>
+     <a href="activity-6.html">
+      Activit&eacute; 6
+     </a>
+     <a href="activity-7.html">
+      Activit&eacute; 7
+     </a>
+     <a href="activity-8.html">
+      Activit&eacute; 8
+     </a>
+     <a href="activity-9.html">
+      Activit&eacute; 9
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="wrap">
+   <section class="activity-hero">
+    <span class="eyebrow">
+     Activit&eacute; 7
+    </span>
+    <h1>
+     Calculer une m&eacute;trique de routage
+    </h1>
+    <p>
+     Comprendre comment un routeur peut choisir un chemin &agrave; partir d&rsquo;une m&eacute;trique, puis comment le r&eacute;seau s&rsquo;adapte &agrave; une panne.
+    </p>
+   </section>
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Introduction
+      </span>
+      <h2>
+       Routage et m&eacute;trique
+      </h2>
+     </div>
+    </div>
+    <p>
+     Un paquet suit un chemin sur le r&eacute;seau, pour cela il doit utiliser les protocoles de routages. On peut voir le chemin parcouru par un paquet avec la commande traceroute.
+    </p>
+    <p>
+     Routing Information Protocol (RIP, protocole d'information de routage) est un protocole de routage IP de type Vector Distance (&agrave; vecteur de distances) s'appuyant sur l'algorithme de d&eacute;termination des routes d&eacute;centralis&eacute; Bellman-Ford. Il permet &agrave; chaque routeur de communiquer aux routeurs voisins la m&eacute;trique, c&rsquo;est-&agrave;-dire la distance qui les s&eacute;pare d'un r&eacute;seau IP d&eacute;termin&eacute; quant au nombre de sauts ou &laquo; hops &raquo; en anglais.
+    </p>
+    <p>
+     Dans la vie courante, on calcule une distance en m (ou km), pour le protocole RIP c&rsquo;est un peu ce que nous allons faire. Nous allons calculer les distances en nombre de routeurs &agrave; traverser (la longueur du c&acirc;ble n&rsquo;a pas d&rsquo;importance). Et choisir le chemin le plus court pour diriger/orienter nos paquets.
+    </p>
+    <p>
+     Chaque paquet est envoy&eacute; au voisin faisant office de routeur ou &eacute;tant uniquement un routeur voisin qui est sur le chemin le plus court.
+    </p>
+    <p class="external-ref">
+     https://fr.wikipedia.org/wiki/Routing_Information_Protocol
+    </p>
+    <div class="figure-grid two">
+     <figure class="figure">
+      <img alt="Illustration de traceroute" loading="lazy" src="../images/illustrations/figure-53-p55-x10440.jpeg"/>
+     </figure>
+     <figure class="figure">
+      <img alt="Illustration du protocole RIP" loading="lazy" src="../images/illustrations/figure-54-p56-x10629.png"/>
+     </figure>
+    </div>
+   </section>
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Calcul
+      </span>
+      <h2>
+       D&eacute;terminer le plus court chemin
+      </h2>
+     </div>
+    </div>
+    <p>
+     Ici nous devons aller de cloud 0 &agrave; cloud 1.
+    </p>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Question
+     </div>
+     <p>
+      Quel est le chemin le plus court ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       Cloud0 &ndash; A &ndash; F &ndash; E &ndash; K &ndash; Cloud1
+      </p>
+     </div>
+    </section>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Question
+     </div>
+     <p>
+      Comment le syst&egrave;me le sait-il ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       En faisant des calculs, une suite de calcul &hellip; Donc en utilisant un Algorithme.
+      </p>
+     </div>
+    </section>
+    <p>
+     Voyons comment fonctionne l&rsquo;algorithme de calcul qui est un des premiers protocoles de routage. Nous verrons celui-ci car il est simple mais sachez que les protocoles utilis&eacute;s sur Internet sont un peu plus compliqu&eacute;s mais fonctionnent sur des principes similaires bas&eacute;s sur la distance et/ou le co&ucirc;t et appel&eacute; m&eacute;trique. Partons de la destination et &eacute;crivons la distance qui nous en s&eacute;pare. Sur la derni&egrave;re branche je suis &agrave; une distance 0 de l&rsquo;arriv&eacute;e. Sur la branche juste apr&egrave;s &agrave; une distance 1 du routeur.
+    </p>
+    <div class="figure-stack">
+     <figure class="figure">
+      <img alt="Graphe de routage" loading="lazy" src="../images/illustrations/figure-55-p58-x11006.jpeg"/>
+     </figure>
+     <figure class="figure">
+      <img alt="Premi&egrave;re &eacute;tape du calcul de m&eacute;trique" loading="lazy" src="../images/illustrations/figure-56-p59-x11195.jpeg"/>
+     </figure>
+     <figure class="figure">
+      <img alt="&Eacute;tapes du calcul de m&eacute;trique" loading="lazy" src="../images/illustrations/figure-57-p63-x11948.png"/>
+     </figure>
+     <figure class="figure">
+      <img alt="Poursuite du calcul de m&eacute;trique" loading="lazy" src="../images/illustrations/figure-58-p65-x12326.png"/>
+     </figure>
+    </div>
+    <p>
+     Je continue 1+1=2
+    </p>
+    <p>
+     Pour le tron&ccedil;on entre G et F ce sera 3, 2+1=3 Par contre, pour le tron&ccedil;on entre E et F j&rsquo;ai le choix entre 1+1 = 2 et 2+1=3. Je choisis le plus petit donc 2.
+    </p>
+    <div class="figure-grid two">
+     <figure class="figure">
+      <img alt="Choix de la plus petite m&eacute;trique" loading="lazy" src="../images/illustrations/figure-59-p66-x12516.png"/>
+     </figure>
+     <figure class="figure">
+      <img alt="Table de routage obtenue" loading="lazy" src="../images/illustrations/figure-60-p67-x12706.png"/>
+     </figure>
+    </div>
+    <p>
+     &Agrave; pr&eacute;sent le syst&egrave;me a rempli ses tables de routage en destination de cloud 0. Il prendra le chemin le plus court qu&rsquo;il a calcul&eacute; sans intervention humaine. Avec un Algorithme.
+    </p>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      R&eacute;sultat du calcul
+     </div>
+     <p>
+      Quel chemin est obtenu apr&egrave;s le calcul de la m&eacute;trique ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       4 &ndash; 3 &ndash; 2 &ndash; 1 A &ndash; F &ndash; E &ndash; K
+      </p>
+     </div>
+    </section>
+   </section>
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Tol&eacute;rance aux pannes
+      </span>
+      <h2>
+       Et si une liaison tombe en panne ?
+      </h2>
+     </div>
+    </div>
+    <p>
+     Et s&rsquo;il y a un incident sur la ligne A-F !
+    </p>
+    <p>
+     Utilisez la m&ecirc;me m&eacute;thode pour calculer le nouveau chemin.
+    </p>
+    <figure class="figure">
+     <img alt="Situation de panne sur A-F" loading="lazy" src="../images/illustrations/figure-62-p68-x12898.jpeg"/>
+    </figure>
+    <figure class="figure">
+     <img alt="Nouveau chemin apr&egrave;s panne" loading="lazy" src="../images/illustrations/figure-61-p68-x12896.jpeg"/>
+    </figure>
+    <p>
+     Le protocole IP fera la m&ecirc;me chose automatiquement pour trouver un nouveau chemin. Cela s&rsquo;appelle de la tol&eacute;rance aux pannes. C&rsquo;est du routage dynamique par opposition au routage statique qui ne se fait pas tout seul mais par le param&eacute;trage d&rsquo;un technicien.
+    </p>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      R&eacute;sultat apr&egrave;s la panne
+     </div>
+     <p>
+      Quel nouveau chemin est obtenu si la ligne A-F est en panne ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       6 &ndash; 5 &ndash; 4 &ndash; 3 &ndash; 2 - 1 A &ndash; B &ndash; C &ndash; D &ndash; E - K
+      </p>
+     </div>
+    </section>
+   </section>
+   <nav aria-label="Navigation entre les activit&eacute;s" class="activity-nav">
+    <a class="button secondary" href="activity-6.html">
+     &larr; Activit&eacute; 6
+    </a>
+    <a class="button" href="activity-8.html">
+     Activit&eacute; 8 &rarr;
+    </a>
+   </nav>
+  </main>
+  <footer class="site-footer">
+   <div class="wrap">
+    Document source : &laquo; Activit&eacute; Comprendre le fonctionnement d&rsquo;Internet AC2026 &raquo;. Version web all&eacute;g&eacute;e : les r&eacute;p&eacute;titions propres au diaporama ont &eacute;t&eacute; supprim&eacute;es sans supprimer les contenus p&eacute;dagogiques uniques.
+   </div>
+  </footer>
+  <script defer="" src="../js/main.js">
+  </script>
+ </body>
+</html>

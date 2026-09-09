@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Activit&eacute; 4 &mdash; R&eacute;flexion sur la perte de paquets" name="description"/>
+  <title>
+   Activit&eacute; 4 &mdash; R&eacute;flexion sur la perte de paquets &mdash; AC2026
+  </title>
+  <link href="../css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Navigation principale" class="nav">
+    <a class="brand" href="../index.html">
+     Comprendre Internet
+    </a>
+    <div class="navlinks">
+     <a href="../index.html">
+      Accueil
+     </a>
+     <a href="activity-1.html">
+      Activit&eacute; 1
+     </a>
+     <a href="activity-2.html">
+      Activit&eacute; 2
+     </a>
+     <a href="activity-3.html">
+      Activit&eacute; 3
+     </a>
+     <a href="activity-4.html">
+      Activit&eacute; 4
+     </a>
+     <a href="activity-5.html">
+      Activit&eacute; 5
+     </a>
+     <a href="activity-6.html">
+      Activit&eacute; 6
+     </a>
+     <a href="activity-7.html">
+      Activit&eacute; 7
+     </a>
+     <a href="activity-8.html">
+      Activit&eacute; 8
+     </a>
+     <a href="activity-9.html">
+      Activit&eacute; 9
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="wrap">
+   <section class="activity-hero">
+    <span class="eyebrow">
+     Activit&eacute; 4
+    </span>
+    <h1>
+     R&eacute;flexion sur la perte de paquets
+    </h1>
+    <p>
+     Partir de la perte d&rsquo;un paquet pour introduire le RTT, le TTL et l&rsquo;observation des routes avec tracert.
+    </p>
+   </section>
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Perte et accus&eacute; de r&eacute;ception
+      </span>
+      <h2>
+       Comment d&eacute;tecter un paquet perdu ?
+      </h2>
+     </div>
+    </div>
+    <p>
+     Certains paquets peuvent se perdre o&ugrave; ne jamais arriver &agrave; destination (suite &agrave; la rupture d&rsquo;un lien, collisions, mauvais routage...)
+    </p>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Question
+     </div>
+     <p>
+      Comment savez-vous qu&rsquo;un paquet n&rsquo;est jamais arriv&eacute; &agrave; destination ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       la source n&rsquo;a pas re&ccedil;u d&rsquo;accus&eacute; de r&eacute;ception.
+      </p>
+     </div>
+    </section>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Question
+     </div>
+     <p>
+      Oui mais au bout de combien de temps consid&egrave;re-t-on un paquet perdu dans les protocoles TCP/IP ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       Le support introduit ensuite le RTT comme d&eacute;lai de r&eacute;f&eacute;rence.
+      </p>
+     </div>
+    </section>
+    <p>
+     Ce temps est d&eacute;fini par le TTL (Time To Live &ndash; temps &agrave; vivre). C&rsquo;est le temps pendant lequel une information doit &ecirc;tre conserv&eacute;e ou le temps pendant lequel une information doit &ecirc;tre gard&eacute;e en cache. Il est cod&eacute; sur 8 bits et permet un temps entre 0 et 255 ms.
+    </p>
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Question
+     </div>
+     <p>
+      Que feriez-vous si un &eacute;l&eacute;ment n&rsquo;arrive pas &agrave; destination (pas d&rsquo;accus&eacute; de r&eacute;ception) ?
+     </p>
+     <button aria-expanded="false" class="answer-button" data-answer-toggle="" type="button">
+      Afficher la r&eacute;ponse
+     </button>
+     <div class="answer-item" hidden="">
+      <strong>
+       R&eacute;ponse attendue
+      </strong>
+      <p>
+       renvoyer le paquet
+      </p>
+     </div>
+    </section>
+   </section>
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Bilan
+      </span>
+      <h2>
+       RTT et TTL
+      </h2>
+     </div>
+    </div>
+    <p>
+     Dans le protocole TCP/IP, la dur&eacute;e au-del&agrave; de laquelle on consid&egrave;re que le paquet est perdu est appel&eacute;e RTT et est comprise entre 0 et 90 ms. C&rsquo;est tr&egrave;s court &agrave; &eacute;chelle humaine mais tout va tr&egrave;s vite dans un c&acirc;ble, donc 90ms est un temps assez long pour consid&eacute;rer un paquet perdu.
+    </p>
+    <p>
+     RTT ou RTD (Round-Trip Time ou Round-Trip Delay) : Il s'agit du d&eacute;lai exprim&eacute; en ms du temps de r&eacute;ponse. Ce d&eacute;lai indique le temps mis par le paquet pour atteindre sa destination et revenir. Plus ce d&eacute;lai est proche de 0, au plus la qualit&eacute; de la connexion est bonne
+    </p>
+    <p>
+     De plus, un paquet a une dur&eacute;e de vie TTL (Time To Live, 8 bits) : Ce champ est initialis&eacute; par l'&eacute;metteur puis diminu&eacute; par chaque routeur travers&eacute;. Quand le TTL arrive &agrave; 0 (TTL de d&eacute;part = 255 ou 127), le paquet est supprim&eacute; par le routeur qui avertit l&rsquo;exp&eacute;diteur (ex: principe de fonctionnement la commande traceroute).
+    </p>
+   </section>
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       ANNEXE 3
+      </span>
+      <h2>
+       Observer le chemin avec tracert
+      </h2>
+     </div>
+    </div>
+
+     <figure class="figure">
+      <img alt="Capture de tracert" loading="lazy" src="../images/illustrations/figure-42-p34-x6476.jpeg"/>
+     </figure>
+     <figure class="figure">
+      <img alt="R&eacute;sultat de tracert vers google.fr" loading="lazy" src="../images/illustrations/figure-43-p35-x6665.jpeg"/>
+     </figure>
+
+    <p>
+     Chaque &eacute;tape est un routeur. On peut rep&eacute;rer que l&rsquo;on passe par la Box du fournisseur d&rsquo;acc&egrave;s. Les autres sont des routeurs d&rsquo;Internet. Certains ne r&eacute;pondent pas &agrave; notre demande d&rsquo;info (D&eacute;lai d&rsquo;attente de la demande d&eacute;pass&eacute;).
+    </p>
+    <p>
+     &Agrave; noter que la m&ecirc;me commande peut donner des adresses diff&eacute;rentes. Cela veut dire en quelques sortes qu&rsquo;il y a plusieurs serveurs google.fr. Toutefois le chemin est presque le m&ecirc;me.
+    </p>
+    
+     <figure class="figure">
+      <img alt="R&eacute;sultat de tracert vers New York" loading="lazy" src="../images/illustrations/figure-44-p36-x6854.jpeg"/>
+     </figure>
+     <figure class="figure">
+      <img alt="Illustration des limites de tracert" loading="lazy" src="../images/illustrations/figure-45-p37-x7043.jpeg"/>
+     </figure>
+    
+    <p>
+     On peut voyager un peu en allant par exemple &agrave; la mairie de New York (USA). Visiblement on passe par la light tower (il se peut que 30 sauts soit insuffisants).
+    </p>
+    <p>
+     La commande tracert peut ne pas r&eacute;ussir &agrave; d&eacute;terminer pr&eacute;cis&eacute;ment tous les sauts sans pour autant &eacute;chouer.
+    </p>
+   </section>
+   <nav aria-label="Navigation entre les activit&eacute;s" class="activity-nav">
+    <a class="button secondary" href="activity-3.html">
+     &larr; Activit&eacute; 3
+    </a>
+    <a class="button" href="activity-5.html">
+     Activit&eacute; 5 &rarr;
+    </a>
+   </nav>
+  </main>
+  <footer class="site-footer">
+   <div class="wrap">
+    Document source : &laquo; Activit&eacute; Comprendre le fonctionnement d&rsquo;Internet AC2026 &raquo;. Version web all&eacute;g&eacute;e : les r&eacute;p&eacute;titions propres au diaporama ont &eacute;t&eacute; supprim&eacute;es sans supprimer les contenus p&eacute;dagogiques uniques.
+   </div>
+  </footer>
+  <script defer="" src="../js/main.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Activit&eacute; 9 &mdash; Construire un petit r&eacute;seau informatique" name="description"/>
+  <title>
+   Activit&eacute; 9 &mdash; Construire un petit r&eacute;seau informatique &mdash; AC2026
+  </title>
+  <link href="../css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <nav aria-label="Navigation principale" class="nav">
+    <a class="brand" href="../index.html">
+     Comprendre Internet
+    </a>
+    <div class="navlinks">
+     <a href="../index.html">
+      Accueil
+     </a>
+     <a href="activity-1.html">
+      Activit&eacute; 1
+     </a>
+     <a href="activity-2.html">
+      Activit&eacute; 2
+     </a>
+     <a href="activity-3.html">
+      Activit&eacute; 3
+     </a>
+     <a href="activity-4.html">
+      Activit&eacute; 4
+     </a>
+     <a href="activity-5.html">
+      Activit&eacute; 5
+     </a>
+     <a href="activity-6.html">
+      Activit&eacute; 6
+     </a>
+     <a href="activity-7.html">
+      Activit&eacute; 7
+     </a>
+     <a href="activity-8.html">
+      Activit&eacute; 8
+     </a>
+     <a class="active" href="activity-9.html">
+      Activit&eacute; 9
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="wrap">
+   <section class="activity-hero">
+    <span class="eyebrow">
+     Activit&eacute; 9
+    </span>
+    <h1>
+     Construire un petit r&eacute;seau informatique
+    </h1>
+    <p>
+     Cette s&eacute;ance permet de construire, tester et faire &eacute;voluer un petit r&eacute;seau dans un simulateur pour comprendre concr&egrave;tement ce que sont l&rsquo;adresse IP, l&rsquo;adresse MAC, le paquet de donn&eacute;es et le serveur DHCP.
+    </p>
+   </section>
+
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Objectif
+      </span>
+      <h2>
+       Tester les principes du r&eacute;seau
+      </h2>
+     </div>
+    </div>
+    <p>
+     Cette activit&eacute; vise &agrave; faire comprendre le fonctionnement d&rsquo;un r&eacute;seau local par un exemple concret : deux ordinateurs, un switch, un serveur DHCP et la circulation des paquets.
+    </p>
+    <p>
+     On observe comment un ordinateur retrouve un autre ordinateur, comment la donn&eacute;e circule, et pourquoi un serveur DHCP permet d&rsquo;automatiser la configuration des machines.
+    </p>
+    <div class="pill-row">
+     <span class="pill">Adresse IP</span>
+     <span class="pill">Adresse MAC</span>
+     <span class="pill">Paquets</span>
+     <span class="pill">Switch</span>
+     <span class="pill">DHCP</span>
+     <br><br>
+    </div>
+<p>
+  Visionnez la vidéo ci-dessous (durée : 8 min 51 s) afin de prendre rapidement en main le logiciel <strong>Filius</strong>.
+  Vous découvrirez les deux modes de fonctionnement du logiciel : le <strong>mode conception</strong>, qui permet de placer
+  les différents éléments du réseau (ordinateurs, commutateurs, routeurs, etc.), et le <strong>mode simulation</strong>,
+  qui permet d'étudier la communication entre les ordinateurs du réseau, notamment l'échange des paquets de données.
+</p>
+
+
+        <div class="video-wrapper">
+            <div class="video-tip" role="note" aria-label="Avertissement pour l'élève">
+                <strong>Important :</strong> utilisez vos écouteurs pour visionner cette vidéo dans de bonnes conditions.
+            </div>
+            <video class="video-player" controls preload="metadata" aria-label="Simuler un réseau avec Filius">
+                <source src="../videos/simuler-un-reseau-avec-filius.mp4" type="video/mp4" />
+                Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+            </video>
+        </div>  
+  
+ 
+
+    </div>
+   </section>
+
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Mat&eacute;riel
+      </span>
+      <h2>
+       Supports et organisation
+      </h2>
+     </div>
+    </div>
+    <ul class="question-list">
+     <li>
+      Logiciel Filius install&eacute; ou accessible en amont de la s&eacute;ance.
+     </li>
+     <li>
+      Lexique fourni aux &eacute;l&egrave;ves : adresse IP, adresse MAC, paquet, switch, DHCP.
+     </li>
+     <li>
+      Fiche r&eacute;ponse compl&eacute;t&eacute;e au fil des questions guid&eacute;es.
+     </li>
+     <li>
+      Travail individuel ou en bin&ocirc;me, avec une d&eacute;marche d&rsquo;autonomie guid&eacute;e.
+     </li>
+    </ul>
+   </section>
+
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       D&eacute;roul&eacute;
+      </span>
+      <h2>
+       Les diff&eacute;rentes phases de la s&eacute;ance
+      </h2>
+     </div>
+    </div>
+
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Phase 1
+     </div>
+     <p>
+      <strong>Mise en situation et prise en main</strong> : contextualisation rapide de la question &laquo; comment un ordinateur trouve-t-il un autre ordinateur sur un r&eacute;seau ? &raquo; puis d&eacute;couverte de l&rsquo;interface Filius.
+     </p>
+     <ul class="question-list">
+      <li>Glisser un ordinateur, un switch et un c&acirc;ble.</li>
+      <li>Conna&icirc;tre les mots-cl&eacute;s de base du r&eacute;seau.</li>
+     </ul>
+    </section>
+
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Phase 2
+     </div>
+     <p>
+      <strong>R&eacute;seau &agrave; deux machines et premier ping</strong> : on construit un petit r&eacute;seau minimal et on observe la circulation d&rsquo;un paquet.
+     </p>
+     <ul class="question-list">
+      <li>Placer deux ordinateurs et les configurer avec une adresse IP et un masque donn&eacute;s.</li>
+      <li>Relier les machines au c&acirc;ble et lancer une commande ping.</li>
+      <li>Observer les paquets envoy&eacute;s, re&ccedil;us et perdus.</li>
+     </ul>
+    </section>
+
+    <div class="figure-grid two">
+     <div class="image-slot">
+      <img src="../images/03-topologie-2-postes.png" alt="Topologie du réseau à deux postes" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+     </div>
+      <div class="image-slot">
+      <img src="../images/04-terminal-ping.png" alt="ping et paquets" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+     </div>
+       <small>Observation du ping et des paquets</small>
+    </div>
+
+    <section class="question-block" data-answer-card="">
+     <div class="question-label">
+      Phase 3
+     </div>
+     <p>
+      <strong>Passage &agrave; l&rsquo;&eacute;chelle avec un switch</strong> : on construit un r&eacute;seau de quatre postes reli&eacute;s au m&ecirc;me switch pour comprendre la diffusion locale des donn&eacute;es.
+     </p>
+     <ul class="question-list">
+      <li>Tester la communication entre plusieurs postes.</li>
+      <li>Comprendre le r&ocirc;le du switch.</li>
+      <li>Comparer avec un hub plus ancien.</li>
+     </ul>
+    </section>
+
+    <div class="figure-grid two">
+     <div class="image-slot">
+      <img src="../images/06-topologie-switch-4-postes.png" alt="Topologie du réseau à deux postes" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+     </div>
+       <div class="image-slot">
+      <img src="../images/05-installation-logiciels.png" alt="Filius en mode simulateur" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+     </div>
+    </div>
+   </section>
+
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Serveur DHCP
+      </span>
+      <h2>
+       Automatiser la configuration des machines
+      </h2>
+     </div>
+    </div>
+    <p>
+     Le probl&egrave;me de la configuration manuelle d&rsquo;une grande quantit&eacute; d&rsquo;ordinateurs pose une question : comment automatiser l&rsquo;attribution des adresses IP ?
+    </p>
+    <p>
+     En ajoutant un serveur DHCP, les postes re&ccedil;oivent automatiquement une adresse, ce qui simplifie grandement la gestion d&rsquo;un r&eacute;seau.
+    </p>
+   <div class="figure-grid two">
+     <div class="image-slot">
+      <img src="../images/07-topologie-complete-dhcp.png" alt="Topologie du réseau avec un serveur DHCP" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+     </div>
+       <div class="image-slot">
+      <img src="../images/08-configuration-dhcp.png" alt="Configuration du serveur DHCP" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+     </div>
+    </div>
+   </section>
+   
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Lexique
+      </span>
+      <h2>
+       Mots cl&eacute;s donn&eacute;s aux &eacute;l&egrave;ves
+      </h2>
+     </div>
+    </div>
+    <ul class="question-list">
+     <li>
+      <strong>Adresse IP</strong> : num&eacute;ro qui identifie un ordinateur sur un r&eacute;seau.
+     </li>
+     <li>
+      <strong>Adresse MAC</strong> : identifiant unique et fixe d&rsquo;une carte r&eacute;seau.
+     </li>
+     <li>
+      <strong>Paquet</strong> : petit morceau de donn&eacute;es envoy&eacute; sur le r&eacute;seau.
+     </li>
+     <li>
+      <strong>Switch</strong> : appareil qui dirige les paquets vers le bon destinataire.
+     </li>
+     <li>
+      <strong>Hub</strong> : appareil plus ancien qui renvoie les paquets &agrave; tous les postes connect&eacute;s.
+     </li>
+     <li>
+      <strong>Serveur DHCP</strong> : machine qui attribue automatiquement les adresses IP du r&eacute;seau.
+     </li>
+    </ul>
+   </section>
+
+   <section class="card">
+    <div class="section-heading">
+     <div>
+      <span class="section-label">
+       Synth&egrave;se
+      </span>
+      <h2>
+       Ce que l&rsquo;on doit retenir
+      </h2>
+     </div>
+    </div>
+    <p>
+     Une adresse IP permet d&rsquo;identifier un ordinateur sur un r&eacute;seau, les paquets transportent les donn&eacute;es et le switch aide &agrave; les acheminer correctement. Le serveur DHCP automatise la configuration, ce que l&rsquo;on utilise aujourd&rsquo;hui dans les r&eacute;seaux domestiques et scolaires.
+    </p>
+ <div class="image-slot">
+ <img src="../images/filius-adresse-ip.png" alt="Configuration de l'adresse IP dans Filius" style="max-width:100%; display:block; margin:0 auto;">
+</div>
+    </div>
+   </section>
+
+   <nav aria-label="Navigation entre les activit&eacute;s" class="activity-nav">
+    <a class="button secondary" href="activity-8.html">
+     &larr; Activit&eacute; 8
+    </a>
+    <a class="button" href="../index.html">
+     Retour au sommaire
+    </a>
+   </nav>
+  </main>
+  <footer class="site-footer">
+   <div class="wrap">
+    Activit&eacute; 9 &mdash; Filius &middot; Seconde SNT &middot; th&egrave;me Internet.
+   </div>
+  </footer>
+  <script defer="" src="../js/main.js">
+  </script>
+ </body>
+</html>
